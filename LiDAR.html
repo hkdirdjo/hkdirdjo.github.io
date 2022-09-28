@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>LiDAR by Husayn Kartodirdjo</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="WorkExperience.html">Work Experience</a></li>
+							<li><a href="About.html">About</a></li>
+							<li><a href="https://www.linkedin.com/in/husayn-kartodirdjo/">LinkedIn</a></li>			
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>LiDAR</h1>
+							<span class="image left"><img src="images/LiDAR/FirstVersion.png" alt="" /></span>
+							<p>
+								I have been working on a high-resolution LiDAR scanner using a pair of low-power stepper motors and a <a href="https://www.sparkfun.com/products/14032">LiDAR-Lite v3</a>. 
+								I was inspired by the masterful <a href="https://www.youtube.com/watch?v=KGN82vLjguI">David Cambridge</a> but wanted to make a lighter, more portable version. 
+								Using timing belt gear reductions, I was able to achieve +/- 0.45 degree accuracy, which is within the angular resolution of the Lidar-Lite.
+								The first version used a 3D printed chassis and was used for the first scan you can see below.
+							</p>
+							<span class="image main"><img src="images/LiDAR/First Scan.png" alt="" /></span>
+							<span class="image left"><img src="images/LiDAR/SecondVersion.png" alt="" /></span>							
+							<p>
+								The second version (at left) uses a composite chassis with 1/8" aluminium sandwiching a 3D printed honeycomb. 
+								This allowed for higher stiffness and precision, lower second moment of inertia, and a more tightly integrated design while maintaining weight.
+								I had intended to use microstepping to decrease the mechanical complexity of the device, but the stepper motors may not be able to provide enough torque.
+								However, this may just be a limitation of the current that can be provided by my power supply - more testing is required.
+								The software, written in C++ for Arduino, has a unique scan pattern to conserve power, and will convert the requested scan resolution to the closest one supported by microstepping.
+							</p>
+							<p>
+								Version three of the project will focus on maximizing the scan rate. 
+								I will likely switch over to DC motors with encoders so that the LiDAR can scan with a constant angular velocity (as opposed to individual steps) without fear of losing steps.
+							</p>
+						</div>
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<div class="inner">
+						<ul class="copyright">
+							<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</div>
+				</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
