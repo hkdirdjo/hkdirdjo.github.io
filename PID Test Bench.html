@@ -42,38 +42,10 @@
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-							<h1>TeensyINS</h1>
+							<h1>PID Test Bench</h1>
 							<section>
-								<span class="image main"><img src="images/TeensyINS/INS Overlay with Text.png" alt="" /></span>
-								<p>Ever since I found out Kalman Filters, especially in the context of <a href="https://ieeexplore.ieee.org/document/5466132">their use in the Apollo program</a>, I have been wanting to implement one myself! 
-									This is a 3D MEMS INS using a Madgwick AHRS for attitude estimation and a Kalman filter for position and velocity estimation.
+								<p>This page is under construction! Please check back soon.
 								</p>
-								<p>
-									I initially ran into both CPU and SRAM limitations on an Arduino Uno board so I upgraded to a much more powerful Teensy 4.0. 
-									I used an GY-91 board and an Adafruit Ultimate GPS Breakout v3 as my sensors. 
-									I wrote <a href="https://github.com/hkdirdjo/BLAforQUAT">a Quaternion library in C++</a> using BasicLinearAlgebra matrices in order to convert the body accelerations in Roll-Pitch-Yaw into North-East-Down and compensate for gravity. 
-									Kalman predictions are generated at 200Hz – deemed adequate as that is the filtering rate on Invensense’s Digital Motion Processor – with Barometric and GPS updates at 1Hz. 
-									With further optimization I believe the prediction rate could easily be increased to 1kHz or more.</p>
-							</section>
-							<section>
-								<div class="Gallery">
-									<img src="images/TeensyINS/INS Overlay 4.png" alt="" style="height:500px;"/>
-									<p>      </p>
-									<img src="images/TeensyINS/INS Overlay 5.png" alt="" style="height:500px;"/>
-								</div>
-							</section>
-							<section>	
-								<p>
-									The No GPS Fix performance reflects the limitations of my components, test set-up, and calibration. 
-									First, my MEMS INS performed roughly 10x worse than the equipment used by <a href="https://www.analog.com/en/technical-articles/the-battle-between-mems-and-fogs-for-precision-guidance.html">Goodall et al.</a>for example, but also were purchased for one-tenth of the price. 
-									However, it compared favourably to the performance observed <a href="https://www.sto.nato.int/publications/STO%20Meeting%20Proceedings/RTO-MP-SET-104/MP-SET-104-29.pdf">by Noureldin et al.</a>
-									While both of these experiments were likely fully strapped down, I had to hold the INS in my lap on the Canada Line during tests, which increased the noise in my tests. 
-									Finally, uncalibrated gyro drift had a large impact on my telemetry as you can see from the data at bottom-right when the Canada Line goes underground. 
-									I had hoped that the magnetometer would be able to compensate, but with the train being underground and powered by large AC traction motors, magnetic distortion is to be expected.
-								</p>
-								<p>
-									I owe an enormous debt of thanks to Mr. Dan Simon, author of Optimal State Estimation: Kalman, H Infinity, and Nonlinear Approaches, which was an invaluable resource for this project.</p>
-							</section>
 						</div>
 					</div>
 
