@@ -44,8 +44,33 @@
 						<div class="inner">
 							<h1>PID Test Bench</h1>
 							<section>
-								<p>This page is under construction! Please check back soon.
+								<p>I decided to pursue this project to re-familiarize myself with control theory after a year away from <a href="https://mech.ubc.ca/yusuf-altintas/">Dr. Altintas'</a> wonderful controls course: MECH 467: Computer Control of Mechatronics System.
+									I wanted to build something that would be able to serve as a fun desk toy once complete, which meant being less than 300mm on any major axis. All the plastic parts were printed on my Prusa Mini.
 								</p>
+
+								<p>
+									There are many sources of error on this project which are worth discussing. 
+									First, the ultrasonic rangefinder (HC-SR04) is intended for planar targets and the spherical ball will have a diminished and noisier return. 
+									Second, the transmitter and receiver of the HC-SR04 are separated by around 20mm, meaning that at close ranges, the transmitter and receiver will be pointing at different hemispheres.
+									This means that the calculated range goes to infinity.
+									Third was the low refresh rate of the HC-SR04.
+									While in MECH 467 we were accustomed to working with encoders with high refresh rates, the recommended refresh rate on the HC-SR04 is 16Hz. 
+									I was able to increase this to 100Hz because of the very short distances involved on this project.
+									Fourth, while I used the straightest sections of the straightest dowel rods I could find at Home Depot, there is still warpage in the rods which will exert an unmodelled disturbance on the ball.
+									Fifth was the servo motor. The servo has a 5us deadzone, which translates into +/- 0.45deg. In addition, the Arduino servo library accepts integer inputs. 
+									While the mechanical layout converts the +/- 40 degree output of the servo to +/- 5deg, the inherent inaccuracy of the servo made it difficult for the system to settle around the setpoint.
+								</p>
+
+								<p>
+									These sources of error combined to make a system that was unstable, despite being marginally stable in theory. With some additional tuning and filtering, I was able to achieve an underdamped but stable system.
+								</p>
+								<p>
+									Future upgrades include: a variable setpoint using a second HC-SR04, use of a GP2Y0A41SK0F SHARP Infrared Distance Sensor to increase accuracy (or use both sensors with a complementary filter), upgrading the actuator, and using a 2020 extrusion or metal rods for the ball's track.
+								</p>
+								<p>
+									With a puppy on the way this summer, I expect to be taking a break from my projects for the next little while. 
+									When I return, I plan on making a foray into RC airplanes! I am very keen on a P-38 style twin boom plane, mounting a TOPDON TC001 IR camera for SAR purposes...
+								</p>									
 						</div>
 					</div>
 
